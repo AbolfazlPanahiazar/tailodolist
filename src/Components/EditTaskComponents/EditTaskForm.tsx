@@ -9,16 +9,22 @@ import {
   SecondaryButton,
 } from "Components/common";
 import { StatusSelect } from "Components/EditTaskComponents";
-import { ITask } from "types";
+import { ITask, TaskStatus } from "types";
 
 interface IEditTaskFormProps {
+  task: ITask;
   onSubmit: SubmitHandler<ITask>;
 }
 
 export const EditTaskForm: FC<IEditTaskFormProps> = ({
   onSubmit,
+  task,
 }): ReactElement => {
-  const { register, handleSubmit } = useForm<ITask>();
+  const { register, handleSubmit, watch, setValue } = useForm<ITask>({
+    defaultValues: task,
+  });
+
+  const taskStatus = watch("status");
 
   return (
     <form
@@ -31,7 +37,11 @@ export const EditTaskForm: FC<IEditTaskFormProps> = ({
         className="mt-3 flex-grow"
         register={register("description")}
       />
-      <StatusSelect value="Done" className="mt-3" />
+      <StatusSelect
+        value={taskStatus}
+        onChange={(e) => setValue("status", e.target.value as TaskStatus)}
+        className="mt-3"
+      />
       <div className="w-full grid grid-cols-2 gap-2 mt-3">
         <PrimaryButton icon={<PencilAltIcon className="w-5" />} type="submit">
           Edit
