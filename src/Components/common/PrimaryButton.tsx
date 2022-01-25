@@ -13,11 +13,11 @@ export const PrimaryButton: FC<IPrimaryButtonProps> = ({
 }): ReactElement => {
   return (
     <button
-      className="w-full bg-primary text-light flex justify-center items-center py-3 rounded-md "
+      className={`w-full bg-primary text-light flex justify-center items-center py-3 rounded-md ${className}`}
       {...resProps}
     >
       {icon}
-      <span className="ml-2">{children}</span>
+      <span className="ml-1">{children}</span>
     </button>
   );
 };

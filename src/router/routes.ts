@@ -14,7 +14,7 @@ export const routes: IRoute[] = [
     Element: Home,
   },
   {
-    path: "/update/:id",
+    path: "/edit/:id",
     Element: EditTaskPage,
   },
 ];

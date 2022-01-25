@@ -1,11 +1,14 @@
 import { FC } from "react";
 
-import { Header } from "Components/common";
+import { Header, PageTitle } from "Components/common";
+import { EditTaskForm } from "Components/EditTaskComponents";
 
 const EditTask: FC = () => {
   return (
-    <div>
+    <div className="w-full h-full flex flex-col">
       <Header />
+      <PageTitle>Edit Task</PageTitle>
+      <EditTaskForm />
     </div>
   );
 };

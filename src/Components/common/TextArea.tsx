@@ -8,7 +8,7 @@ export const TextArea: FC<ITextAreaProps> = ({
 }): ReactElement => {
   return (
     <textarea
-      className="w-full flex-grow bg-grey-100 text-sm text-dark placeholder:text-sm placeholder:text-grey-200 py-3 px-3 border-b focus:border border-grey-200 rounded-t-sm transition-all ease-in-out duration-150"
+      className={`w-full flex-grow bg-grey-100 text-sm text-dark placeholder:text-sm placeholder:text-grey-200 py-3 px-3 border-b focus:border border-grey-200 rounded-t-sm transition-all ease-in-out duration-150 ${className}`}
       {...restProps}
     ></textarea>
   );
