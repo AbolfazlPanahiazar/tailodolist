@@ -1,6 +1,6 @@
 import { FC, lazy } from "react";
 
-const TasksListPage = lazy(() => import("pages/TasksList"));
+const Home = lazy(() => import("pages/Home"));
 const EditTaskPage = lazy(() => import("pages/EditTask"));
 
 interface IRoute {
@@ -11,7 +11,7 @@ interface IRoute {
 export const routes: IRoute[] = [
   {
     path: "/",
-    Element: TasksListPage,
+    Element: Home,
   },
   {
     path: "/update/:id",

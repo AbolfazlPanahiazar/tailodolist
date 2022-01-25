@@ -4,7 +4,7 @@ import Router from "./router/Router";
 
 const App: FC = () => {
   return (
-    <div>
+    <div className="w-full h-full">
       <Router />
     </div>
   );
