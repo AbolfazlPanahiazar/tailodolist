@@ -45,7 +45,7 @@ const EditTask: FC = () => {
   }, [id]);
 
   return (
-    <div className="w-full h-full flex flex-col">
+    <div className="w-full max-w-lg h-full flex flex-col">
       <Header />
       <PageTitle>Edit Task</PageTitle>
       <EditTaskForm onSubmit={editTaskHandler} task={currentTask()} />

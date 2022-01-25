@@ -33,7 +33,7 @@ const Home: FC = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col">
+    <div className="w-full max-w-lg h-full flex flex-col">
       <Header />
       <PageTitle>Add a new Task</PageTitle>
       <CreateTaskForm onSubmit={createTaskHandler} />
