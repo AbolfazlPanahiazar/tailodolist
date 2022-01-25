@@ -2,7 +2,7 @@ import { createContext, ReactElement, useEffect, useReducer, FC } from "react";
 import Reducer from "./reducer";
 import { IContext, IGlobalState } from "types";
 import { initialState } from "./initialState";
-import { LOCAL_PERSIST_KEY } from "constants/envVariables";
+import { LOCAL_PERSIST_KEY } from "constants/variables";
 
 export const globalContext = createContext<IContext>({} as IContext);
 

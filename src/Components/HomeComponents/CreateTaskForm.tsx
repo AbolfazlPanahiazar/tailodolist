@@ -1,4 +1,4 @@
-import { FC, ReactElement } from "react";
+import { FC, ReactElement, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { PencilIcon } from "@heroicons/react/solid";
 
@@ -16,7 +16,18 @@ interface ICreateTaskFormProps {
 export const CreateTaskForm: FC<ICreateTaskFormProps> = ({
   onSubmit,
 }): ReactElement => {
-  const { register, handleSubmit } = useForm<ICreateTaskFormFields>();
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitted },
+    reset,
+  } = useForm<ICreateTaskFormFields>();
+
+  useEffect(() => {
+    if (isSubmitted) {
+      reset();
+    }
+  }, [isSubmitted]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="px-7 pb-4">
